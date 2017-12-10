@@ -29,7 +29,10 @@ class Chunk(object):
             self.voxels = []
             self.voxels = [ Voxel(*unpack('BBBB', content, 4+4*i)) for i in range(n) ]
         elif id == b'RGBA':
-            self.palette = [ Color(*unpack('BBBB', content, 4*i)) for i in range(256) ]
+            self.palette = [ Color(*unpack('BBBB', content, 4*i)) for i in range(255) ]
+            # Docs say:  color [0-254] are mapped to palette index [1-255]
+            # hmm
+            # self.palette = [ Color(0,0,0,0) ] + [ Color(*unpack('BBBB', content, 4*i)) for i in range(255) ]
         elif id == b'MATT':
             _id, _type, weight, flags = unpack('iifi', content)
             props = {}
