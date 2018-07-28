@@ -71,7 +71,7 @@ class Vox(object):
             # color index 0 is reserved for empty, so we get 255 colors
             img = Image.fromarray(a.reshape(x,y*z,3)).quantize(255)
             palette = img.getpalette()
-            palette = [ Color(0,0,0,0) ] + [ Color(*c, 255) for c in chunks(palette, 3) ]
+            palette = [ Color(*c, 255) for c in chunks(palette, 3) ]
             a = np.asarray(img, dtype='B').reshape(x,y,z).copy() + 1
             a[mask] = 0
 
