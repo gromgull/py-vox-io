@@ -1,5 +1,8 @@
-py-vox-io
-=========
+numpy-vox-io
+============
+
+*This is a fork of [py-vox-io](https://github.com/gromgull/py-vox-io). Many thanks to Gunnar Aastrand Grimnes for writing and sharing it.*
+
 
 A Python parser and writer for the [Magica Voxel .vox
 format](https://github.com/ephtracy/voxel-model/blob/master/MagicaVoxel-file-format-vox.txt)
